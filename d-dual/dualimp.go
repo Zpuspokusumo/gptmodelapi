@@ -10,10 +10,9 @@ import (
 	"github.com/sashabaranov/go-openai"
 )
 
-const API_KEY string = "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"
-
 func main() {
-	client := openai.NewClient(API_KEY)
+	x := os.Getenv("API-KEY")
+	client := openai.NewClient(x)
 
 	fmt.Print("Input username> ")
 	scanner := bufio.NewScanner(os.Stdin)

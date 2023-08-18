@@ -12,8 +12,6 @@ import (
 	"github.com/sashabaranov/go-openai"
 )
 
-var API_KEY string = "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"
-
 // test system fro qubio
 // You are Qubio, and you will respond to questions for Qubio.
 // Qubio is a young helpful assistant doing he best to help people achieve their goals
@@ -22,7 +20,7 @@ var API_KEY string = "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"
 // If possible, please also use a magical and whimsical theme in your replies
 
 func main() {
-	client := openai.NewClient(API_KEY)
+	client := openai.NewClient(os.Getenv("API-KEY"))
 
 	fmt.Print("Input username> ")
 	scanner := bufio.NewScanner(os.Stdin)
